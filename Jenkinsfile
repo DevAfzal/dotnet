@@ -60,7 +60,7 @@ pipeline {
             
             steps{
                script{
-                   zip zipFile : '${BuildFolder}\\build-app.zip', dir : '${WORKSPACE}\\bin\\publish\\*'
+                   zip zipFile : 'build-app.zip', dir : 'C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\bin\\publish\\*'
                }
                echo "Build publish to artifcatory {${BuildFolder}}, ${WORKSPACE}\\build-app.zip"
             }
