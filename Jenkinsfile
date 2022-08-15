@@ -1,4 +1,4 @@
-   def projectPath ="consoleApp.csproj"
+   def projectPath ="ConsoleDotnet.csproj"
 
 
 pipeline {
@@ -33,7 +33,7 @@ pipeline {
           }
        stage('build publish'){
            steps{
-              bat "dotnet publish "+projectPath
+              bat "dotnet publish ${projectPath}  --configuration Release --output .\bin\publish"
              }
           }
         
