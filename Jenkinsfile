@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+     environment {
+        dotnet ='C:\\Program Files (x86)\\dotnet\\'
+        }
 
     stages {
         
@@ -10,6 +14,26 @@ pipeline {
                 echo 'Downloading Done'
             }
         }
+        stage('Restore packages'){
+           steps{
+              bat "dotnet restore dotnet\\consoleApp.csproj"
+             }
+          }
+         stage('Clean packages'){
+           steps{
+              bat "dotnet clean dotnet\\consoleApp.csproj"
+             }
+          }
+        stage('build packages'){
+           steps{
+              bat "dotnet build dotnet\\consoleApp.csproj"
+             }
+          }
+          stage('build packages'){
+           steps{
+              bat "dotnet publish dotnet\\consoleApp.csproj"
+             }
+          }
         
         stage('***Configuration Started****') {
             steps {
