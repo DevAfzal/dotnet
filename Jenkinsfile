@@ -60,9 +60,9 @@ pipeline {
             
             steps{
                script{
-                   zip zipFile : 'build-app.zip', dir : '\\bin\\publish\\*'
+                   zip zipFile : '${WORKSPACE}\\build-app.zip', dir : '${WORKSPACE}\\bin\\publish\\*'
                }
-               echo "Build publish to artifcatory {${WORKSPACE}}\\build-app.zip"
+               echo "Build publish to artifcatory ${WORKSPACE}\\build-app.zip"
             }
         }
         
