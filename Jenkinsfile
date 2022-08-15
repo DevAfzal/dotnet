@@ -1,4 +1,4 @@
-   def projectPath ="C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj"
+   def projectPath ="consoleApp.csproj"
 
 
 pipeline {
