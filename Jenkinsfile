@@ -59,7 +59,7 @@ pipeline {
         stage('** Publising  to artifactory'){
             
             steps{
-                zip zipFile : '.\bin\build-app.zip'  dir : '.\\bin\\publish\\*'
+                zip zipFile : '.\bin\build-app.zip', dir : '.\\bin\\publish\\*'
                 echo "Build publish to artifcatory"
             }
         }
