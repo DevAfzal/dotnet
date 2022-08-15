@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    projectPath ='C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj'
+   def projectPath ='C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj'
      environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
         }
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Restore packages'){
            steps{
-              bat "dotnet restore "+projectPath
+               bat "dotnet restore ${projectPath}"
              }
           }
          stage('Clean packages'){
