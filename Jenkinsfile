@@ -1,6 +1,8 @@
+   def projectPath ="C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj"
+
+
 pipeline {
     agent any
-   def projectPath ='C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj'
      environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
         }
@@ -29,7 +31,7 @@ pipeline {
               bat "dotnet build "+projectPath
              }
           }
-          stage('build packages'){
+       stage('build publish'){
            steps{
               bat "dotnet publish "+projectPath
              }
