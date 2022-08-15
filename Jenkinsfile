@@ -60,9 +60,9 @@ pipeline {
             
             steps{
                 zip 
-                  zipFile: ".\bin\build-app.zip"
-                  archive: true
-                  dir: ".\\bin\\publish\\*"
+                 zipFile: '.\bin\build-app.zip'
+                 archive: true
+                 dir: '.\\bin\\publish\\*'
                 echo "Build publish to artifcatory"
             }
         }
