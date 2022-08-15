@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+    projectPath ='C:\\Users\\afzal\\.jenkins\\workspace\\DotNet Pipeline\\consoleApp.csproj'
      environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
         }
@@ -16,22 +16,22 @@ pipeline {
         }
         stage('Restore packages'){
            steps{
-              bat "dotnet restore dotnet\\consoleApp.csproj"
+              bat "dotnet restore "+projectPath
              }
           }
          stage('Clean packages'){
            steps{
-              bat "dotnet clean dotnet\\consoleApp.csproj"
+              bat "dotnet clean "+projectPath
              }
           }
         stage('build packages'){
            steps{
-              bat "dotnet build dotnet\\consoleApp.csproj"
+              bat "dotnet build "+projectPath
              }
           }
           stage('build packages'){
            steps{
-              bat "dotnet publish dotnet\\consoleApp.csproj"
+              bat "dotnet publish "+projectPath
              }
           }
         
