@@ -33,7 +33,7 @@ pipeline {
           }
        stage('build publish'){
            steps{
-              bat "dotnet publish ${projectPath}  --configuration Release --output .\bin\publish"
+              bat "dotnet publish ${projectPath}  --configuration Release --output .\\bin\\publish"
              }
           }
         
