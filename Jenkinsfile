@@ -14,8 +14,9 @@ pipeline {
         
         stage('***Cloning Started****') {
             steps {
-                cleanWs()
-                deleteDir()
+                dir ('bin') {
+                     deleteDir()
+                 }
                 echo 'Downloading..'
                 echo 'Pulling...' + env.BRANCH_NAME
                 echo 'Downloading Done'
