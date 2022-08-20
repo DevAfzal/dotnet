@@ -14,9 +14,14 @@ pipeline {
         
         stage('***Cloning Started****') {
             steps {
+                cleanWs()
+                deleteDir()
                 echo 'Downloading..'
                 echo 'Pulling...' + env.BRANCH_NAME
                 echo 'Downloading Done'
+                 // We need to explicitly checkout from SCM here
+                checkout scm
+                echo "Building ${env.JOB_NAME}..."
             }
         }
         stage('Restore packages'){
