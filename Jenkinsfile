@@ -75,10 +75,11 @@ pipeline {
             }
         }
        stage('** Push changes to artifcatory **'){
-             
+          steps{
              archiveArtifacts artifacts: 'build-app.zip', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
              echo 'build is done'
              }
+       }
             
       )
         
