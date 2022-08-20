@@ -6,11 +6,16 @@ pipeline {
      environment {
         dotnet ='C:\\Program Files (x86)\\dotnet\\'
         }
-
+   options {
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
+    }
     stages {
         
         stage('***Cloning Started****') {
             steps {
+                cleanWs()
+                deleteDir()
                 echo 'Downloading..'
                 echo 'Pulling...' + env.BRANCH_NAME
                 echo 'Downloading Done'
@@ -60,7 +65,7 @@ pipeline {
             
             steps{
                script{
-                   zip zipFile : 'C:\\Barkat\\Jenkins\\New folder\\build-app.zip'
+                    zip zipFile: 'build-app.zip', archive: false, dir: './bin//publish', overwrite: true
                       
                }
                echo "Build publish to artifcatory  ${WORKSPACE}\\build-app.zip"
