@@ -74,6 +74,13 @@ pipeline {
                echo "Build publish to artifcatory  ${WORKSPACE}\\build-app.zip"
             }
         }
+       stage("** Push changes to artifcatory **){
+             
+             archiveArtifacts artifacts: 'build-app.zip', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+             echo 'build is done'
+             }
+            
+      )
         
         
         
